@@ -1,3 +1,4 @@
+// BACKUP CONNECTION FILE
 const mongoose = require('mongoose')
 mongoose.Promise = Promise
 
@@ -32,14 +33,14 @@ module.exports = mongoose
 // if(process.env.MONGODB_URI) {
 //     mongoURI = process.env.MONGODB_URI
 // } else {
-//     mongoURI = "mongodb://localhost/bookmarksdb"
+//     mongoURI = "mongodb://localhost/drawsocket"
 // }
 // // connect to the database, with the imported mongoose instance
 // mongoose.connect(mongoURI, {useNewUrlParser: true})
 //  .then(instance => {
-//      console.log(`Connected to db: ${instance.connections[0].name}`)
+//      console.log(`Connected to your AWESOME mongo db: ${instance.connections[0].name}`)
 //  }).catch(error => {
-//      console.log("Connetion failed", error)
+//      console.log("Connetion failed uh oh", error)
 //  })
 
 // // export mongoose

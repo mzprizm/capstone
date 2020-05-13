@@ -16,9 +16,8 @@
     "socket.io": "~2.3.0"
   },
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon"
+    "start": "node index"
   },
-  "author": "Carolyn Nickell (Damien Arrachequesn socket.io,)",
+  "author": "Carolyn Nickell for General Assembly, socket.io inspired by Damien Arrachequesne",
   "license": "MIT"
 }
