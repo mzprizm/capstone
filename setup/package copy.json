@@ -16,7 +16,8 @@
     "socket.io": "~2.3.0"
   },
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "author": "Carolyn Nickell for General Assembly, socket.io inspired by Damien Arrachequesne",
   "license": "MIT"
