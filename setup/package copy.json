@@ -1,0 +1,24 @@
+{
+  "name": "magicdrawingboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "socket.io",
+    "whiteboard"
+  ],
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "~4.17.1",
+    "mongoose": "^5.9.13",
+    "morgan": "^1.10.0",
+    "socket.io": "~2.3.0"
+  },
+  "scripts": {
+    "start": "node index",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+  },
+  "author": "Carolyn Nickell for General Assembly, socket.io inspired by Damien Arrachequesne",
+  "license": "MIT"
+}
