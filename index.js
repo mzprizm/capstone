@@ -27,11 +27,13 @@ mongoose.connect(mongoURI, { useNewUrlParser: true });
 // mongodb+srv://dbadmin:<password>@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority
 // mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:27017/drawsocket");
 module.exports = mongoose
+
 const nameSchema = new mongoose.Schema({ firstName: String });
 const User = mongoose.model("User", nameSchema);
 // ROUTES
 // const userRoutes = require('./routes/users')
 // app.use('/users', userRoutes)
+
 app.use(express.static(__dirname + '/public'));
 app.post("/addname", (req, res) => {
   const myData = new User(req.body);
