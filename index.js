@@ -16,10 +16,12 @@ let mongoURI = ''
 if(process.env.NODE_ENV === "production") {
     mongoURI = process.env.DB_URL
 } else {
-    mongoURI = 'mongodb://localhost/drawsocket'
+  mongoURI = 'mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority'
 }
+// else {
+//     mongoURI = 'mongodb://localhost/drawsocket'
+// }
 
-let mongoURI = 'mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority'
 mongoose.connect(mongoURI, { useNewUrlParser: true });
 // mongoose.connect('mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
 // mongodb+srv://dbadmin:<password>@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority
