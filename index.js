@@ -12,12 +12,16 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(cors());
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-let mongoURI = ''
-if(process.env.NODE_ENV === "production") {
-    mongoURI = process.env.DB_URL
-} else {
-  mongoURI = 'mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority'
-}
+
+let mongoURI = 'mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority'
+// let mongoURI = ''
+// if(process.env.NODE_ENV === "production") {
+//     mongoURI = process.env.DB_URL
+// } else {
+//   mongoURI = 'mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority'
+// }
+
+
 // else {
 //     mongoURI = 'mongodb://localhost/drawsocket'
 // }
