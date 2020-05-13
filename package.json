@@ -1,20 +1,24 @@
 {
-  "name": "magic drawing board",
+  "name": "magicdrawingboard",
   "version": "1.0.0",
-  "description": "A simple collaborative whiteboard using socket.io",
+  "description": "",
   "main": "index.js",
   "keywords": [
     "socket.io",
     "whiteboard"
   ],
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "~4.17.1",
     "mongoose": "^5.9.13",
+    "morgan": "^1.10.0",
     "socket.io": "~2.3.0"
   },
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "dev": "nodemon"
   },
-  "author": "Damien Arrachequesne for socket.io, Carolyn Nickell reformatted, updated, deployed as part of General Assembly Bootcamp",
+  "author": "Carolyn Nickell (Damien Arrachequesn socket.io,)",
   "license": "MIT"
 }
