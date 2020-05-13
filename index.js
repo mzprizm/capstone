@@ -16,9 +16,11 @@ let mongoURI = ''
 if(process.env.NODE_ENV === "production") {
     mongoURI = process.env.DB_URL
 } else {
-    mongoURI = "mongodb://localhost/drawsocket"
+    mongoURI = 'mongodb://localhost/drawsocket'
 }
-mongoose.connect(mongoURI, { useNewUrlParser: true });
+// mongoose.connect(mongoURI, { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
+mongodb+srv://dbadmin:<password>@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority
 // mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:27017/drawsocket");
 module.exports = mongoose
 const nameSchema = new mongoose.Schema({ firstName: String });
