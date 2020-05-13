@@ -1,5 +1,5 @@
 {
-  "name": "whiteboard",
+  "name": "magic drawing board",
   "version": "1.0.0",
   "description": "A simple collaborative whiteboard using socket.io",
   "main": "index.js",
@@ -14,6 +14,6 @@
   "scripts": {
     "start": "node index"
   },
-  "author": "Damien Arrachequesne",
+  "author": "Damien Arrachequesne for socket.io, Carolyn Nickell reformatted, updated, deployed as part of General Assembly Bootcamp",
   "license": "MIT"
 }

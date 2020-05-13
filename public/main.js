@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-
+ console.log("main function -- drawing");
   var socket = io();
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
@@ -72,10 +72,12 @@
     drawLine(current.x, current.y, e.clientX||e.touches[0].clientX, e.clientY||e.touches[0].clientY, current.color, true);
     current.x = e.clientX||e.touches[0].clientX;
     current.y = e.clientY||e.touches[0].clientY;
+    console.log("main function -- onMouseMove", onMouseMove);
   }
 
   function onColorUpdate(e){
     current.color = e.target.className.split(' ')[1];
+    console.log("main function -- onColorUpdate", onColorUpdate);
   }
 
   // limit the number of events per second
