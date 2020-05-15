@@ -80,3 +80,6 @@ Inspiration:
 ### Additional Libraries
 
 ### Code Snippet
+
+### Post-MVP:
+- add click event for 'dot' when mouse is held down for over .3 seconds without moving

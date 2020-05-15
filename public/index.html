@@ -1,28 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Socket.IO whiteboard</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Magic Drawing Board</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Draw</h1>
-    <form method="post" action="/addname">
-    <label>Enter Your Name</label><br>
-    <input type="text" name="firstName" placeholder="Enter first name..." required>
-    <input type="submit" value="Add Name">
-    </form>
-  <canvas class="whiteboard" ></canvas>
+    <div>
+        <canvas class="whiteboard" ></canvas>
+    </div>
+    <div class="colors">
+        <div class="Title"><h1>Draw!</h1></div>
+        <div class="color Crimson"></div>
+        <div class="color black"></div>
+        <div class="color DarkSlateBlue"></div>
+        <div class="color DodgerBlue"></div>
 
-  <div class="colors">
-    <div class="color black"></div>
-    <div class="color red"></div>
-    <div class="color green"></div>
-    <div class="color blue"></div>
-    <div class="color yellow"></div>
-  </div>
+        <div class="color SeaGreen"></div>
+        <div class="color DarkOrange"></div>
+        <div class="color Gold"></div>
+        <br>
+        <div class="instructions">Info</div>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/main.js"></script>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>
+
+
+<!-- <div class="guestbook">
+    </div><h1>Draw Something!</h1></div>
+    <form method="post" action="/addname">
+    <label>Enter Your Name</label><br>
+    <input type="text" name="firstName" placeholder="sign your artwork" required>
+    <input type="submit" value="Add Name">
+    </form>
+</div>

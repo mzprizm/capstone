@@ -1,8 +1,12 @@
 'use strict';
+// The purpose of "use strict" is to indicate that the code should be executed in "strict mode". 
+// With strict mode, you can not, for example, use undeclared variables.
+// It mostly helps you keep your own code clean.
 
+//anon function called in js. Runs thanks to () after its {}: 
 (function() {
- console.log("main function -- drawing");
   var socket = io();
+// whiteboard is the class name for the <canvas></canvas> element getting called in on index.html
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
   var context = canvas.getContext('2d');
@@ -10,6 +14,7 @@
   var current = {
     color: 'black'
   };
+// when you first arrive, your mouse is not clicked, so you are not drawing 
   var drawing = false;
 
   canvas.addEventListener('mousedown', onMouseDown, false);
@@ -17,16 +22,18 @@
   canvas.addEventListener('mouseout', onMouseUp, false);
   canvas.addEventListener('mousemove', throttle(onMouseMove, 10), false);
   
-  //Touch support for mobile devices
+  //Touch for mobile devices
   canvas.addEventListener('touchstart', onMouseDown, false);
   canvas.addEventListener('touchend', onMouseUp, false);
   canvas.addEventListener('touchcancel', onMouseUp, false);
   canvas.addEventListener('touchmove', throttle(onMouseMove, 10), false);
 
-  for (var i = 0; i < colors.length; i++){
+  // bring in all the colors in a classic js for loop, and update the color on click:
+  for (let i = 0; i < colors.length; i++){
     colors[i].addEventListener('click', onColorUpdate, false);
   }
 
+  // when the socket is own, the drawing event 
   socket.on('drawing', onDrawingEvent);
 
   window.addEventListener('resize', onResize, false);
@@ -38,7 +45,7 @@
     context.moveTo(x0, y0);
     context.lineTo(x1, y1);
     context.strokeStyle = color;
-    context.lineWidth = 2;
+    context.lineWidth = 3;
     context.stroke();
     context.closePath();
 
@@ -77,7 +84,6 @@
 
   function onColorUpdate(e){
     current.color = e.target.className.split(' ')[1];
-    console.log("main function -- onColorUpdate", onColorUpdate);
   }
 
   // limit the number of events per second

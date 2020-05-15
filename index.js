@@ -6,6 +6,7 @@ const parser = require('body-parser');
 const cors = require("cors");
 const morgan = require('morgan');
 const port = process.env.PORT || 3000;
+
 app.use(morgan('dev'));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
@@ -39,16 +40,16 @@ const User = mongoose.model("User", nameSchema);
 // app.use('/users', userRoutes)
 
 app.use(express.static(__dirname + '/public'));
-app.post("/addname", (req, res) => {
-  const myData = new User(req.body);
-  myData.save()
-  .then(item => {
-  res.send("item saved to database like a B0$$");
-  })
-  .catch(err => {
-  res.status(400).send("unable to save to database yo!!!");
-  });
-});
+// app.post("/addname", (req, res) => {
+//   const myData = new User(req.body);
+//   myData.save()
+//   .then(item => {
+//   res.send("item saved to database like a B0$$");
+//   })
+//   .catch(err => {
+//   res.status(400).send("unable to save to database oh bummer");
+//   });
+// });
 
 function onConnection(socket){
   socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
