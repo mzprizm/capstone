@@ -9,15 +9,30 @@
     cursor: crosshair;
     font-family: helvetica;
     overflow: hidden;
+    background-color: #FAFAFA;
+  }
+
+  h1 {
+    font-size: 1.2em;
   }
 
   input {
     text-transform: uppercase;
   }
 
-  footer {
-    display: flex-wrap;
-  }
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 0px;
+  padding: 5px;
+  margin: 2.5px;
+}
+
+.instructions {
+  font-style: italic;
+  font-size: 12px;
+}
   
   .whiteboard {
     height: 100%;
@@ -35,8 +50,35 @@
   }
 
   .instructions {
-    margin: 3px;
+    margin-top: 3px;
+    margin-left: 5px;
   }
+
+  #infoDiv {
+    width: 100%;
+    text-align: left;
+    display: none;
+    border: 1px solid black;
+    margin-left: 5px;
+  }
+
+/* 
+  .instructions {
+    position: absolute;
+    height: 94vh;
+    width: 100vw;
+    top: 6vh;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+  } */
+  
+  /* .instructions a {
+    color: gray;
+  } */
   
   .colors {
     position: fixed;
@@ -49,9 +91,9 @@
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    -webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75); 
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75); 
   }
 
   .color:hover {
@@ -65,6 +107,10 @@
     -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75); 
   }
+
+  .color:active {
+    box-shadow: white;
+  }
   
   .color.black { background-color: black; color: black;}
   .color.DarkSlateBlue { background-color: DarkSlateBlue; }
@@ -74,3 +120,8 @@
   .color.DarkOrange { background-color: DarkOrange; }
   .color.Gold { background-color: Gold; }
   .color.LightPink { background-color: LightPink; }
+
+
+  /* @media(min-width: 768px){
+
+  @media (min-width: 1024px){ */

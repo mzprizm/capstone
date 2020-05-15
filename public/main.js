@@ -33,11 +33,15 @@
     colors[i].addEventListener('click', onColorUpdate, false);
   }
 
-  // when the socket is own, the drawing event 
+  // when the socket is on, the drawing event 
   socket.on('drawing', onDrawingEvent);
 
   window.addEventListener('resize', onResize, false);
   onResize();
+  
+  window.ontouchend = (e) => {
+    e.preventDefault();
+};
 
 
   function drawLine(x0, y0, x1, y1, color, emit){
@@ -82,16 +86,24 @@
     console.log("main function -- onMouseMove", onMouseMove);
   }
 
+  // since the colors are named with html color values like "green", 
+  // this can grab it and send it easily:
   function onColorUpdate(e){
     current.color = e.target.className.split(' ')[1];
   }
 
-  // limit the number of events per second
+  // essentially 'wrapper function' that
+  // limits the number of events per second:
+  //  Throttle calls to "callback" routine and ensures that it
+  // is not invoked any more often than "delay" milliseconds.
+  // https://blogorama.nerdworks.in/javascriptfunctionthrottlingan/ 
   function throttle(callback, delay) {
     var previousCall = new Date().getTime();
     return function() {
       var time = new Date().getTime();
-
+        // if "delay" milliseconds have expired since
+        // the previous call then propagate this call to
+        // "callback"
       if ((time - previousCall) >= delay) {
         previousCall = time;
         callback.apply(null, arguments);
@@ -105,7 +117,7 @@
     drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color);
   }
 
-  // make the canvas fill its parent
+  // make the canvas fill the window no matter what shape / size
   function onResize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;

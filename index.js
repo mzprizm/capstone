@@ -15,14 +15,13 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 let mongoURI = 'mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority'
+// SETUP GUESTBOOK SERVER
 // let mongoURI = ''
 // if(process.env.NODE_ENV === "production") {
 //     mongoURI = process.env.DB_URL
 // } else {
 //   mongoURI = 'mongodb+srv://dbadmin:dbadmin@cluster0-5h2cq.mongodb.net/test?retryWrites=true&w=majority'
 // }
-
-
 // else {
 //     mongoURI = 'mongodb://localhost/drawsocket'
 // }
@@ -33,13 +32,12 @@ mongoose.connect(mongoURI, { useNewUrlParser: true });
 // mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:27017/drawsocket");
 module.exports = mongoose
 
-const nameSchema = new mongoose.Schema({ firstName: String });
-const User = mongoose.model("User", nameSchema);
-// ROUTES
-// const userRoutes = require('./routes/users')
-// app.use('/users', userRoutes)
+// // SCHEMA FOR GUESTBOOK
+// const nameSchema = new mongoose.Schema({ firstName: String });
+// const User = mongoose.model("User", nameSchema);
 
 app.use(express.static(__dirname + '/public'));
+// ROUTE FOR GUESTBOOK SIGNING
 // app.post("/addname", (req, res) => {
 //   const myData = new User(req.body);
 //   myData.save()
