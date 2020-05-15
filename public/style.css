@@ -23,15 +23,17 @@
 button {
   text-transform: uppercase;
   font-weight: bold;
-  border: 1px solid black;
+  border: .7px solid black;
   border-radius: 0px;
   padding: 5px;
   margin: 2.5px;
 }
 
 .instructions {
-  font-style: italic;
   font-size: 12px;
+  margin-top: 3px;
+  margin-left: 5px;
+  letter-spacing: 1.2;
 }
   
   .whiteboard {
@@ -49,11 +51,6 @@ button {
     margin-left: 5px;
   }
 
-  .instructions {
-    margin-top: 3px;
-    margin-left: 5px;
-  }
-
   #infoDiv {
     width: 100%;
     text-align: left;
@@ -61,24 +58,6 @@ button {
     border: 1px solid black;
     margin-left: 5px;
   }
-
-/* 
-  .instructions {
-    position: absolute;
-    height: 94vh;
-    width: 100vw;
-    top: 6vh;
-    background-color: rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 4;
-  } */
-  
-  /* .instructions a {
-    color: gray;
-  } */
   
   .colors {
     position: fixed;
@@ -91,9 +70,9 @@ button {
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    -webkit-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75); 
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5); 
   }
 
   .color:hover {
@@ -109,7 +88,10 @@ button {
   }
 
   .color:active {
-    box-shadow: white;
+    -webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0);
+    -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0);
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0); 
+    box-shadow: none;
   }
   
   .color.black { background-color: black; color: black;}
@@ -122,6 +104,52 @@ button {
   .color.LightPink { background-color: LightPink; }
 
 
-  /* @media(min-width: 768px){
+  @media only screen
+  and (min-width: 300px)
+  and (max-width: 1000px){
+    body {
+      overscroll-behavior-y: contain;
+    }
+    h1 {
+      color: green;
+    }
+    canvas {
+      position: fixed;
+      overflow: hidden;
+    }
+    .color {
+      height: 100px;
+      width: 100px;
+      border-radius: 50px;
+    }
+    .color:active {
+      -webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0);
+      -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0);
+      box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0); 
+      box-shadow: none;
+    }
+  }
 
-  @media (min-width: 1024px){ */
+  /* @media (min-width: 1024px){
+    body {
+      overscroll-behavior-y: contain;
+    }
+    h1 {
+      color: blue;
+    }
+    canvas {
+      position: fixed;
+      overflow: hidden;
+    }
+    .color {
+      height: 100px;
+      width: 100px;
+      border-radius: 50px;
+    }
+    .color:active {
+      -webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0);
+      -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0);
+      box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.0); 
+      box-shadow: none;
+    }
+  } */

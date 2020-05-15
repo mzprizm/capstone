@@ -3,30 +3,34 @@
 // With strict mode, you can not, for example, use undeclared variables.
 // It mostly helps you keep your own code clean.
 
-//anon function called in js. Runs thanks to () after its {}: 
+//anon function called. (Note that it runs thanks to () after its {} ): 
 (function() {
   var socket = io();
-// whiteboard is the class name for the <canvas></canvas> element getting called in on index.html
+// whiteboard is the class name for the <canvas></canvas> element getting called in on index.html:
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
+// The HTMLCanvasElement.getContext() method returns the 2d drawing context on the canvas:
+// (examples of other options besides 2d are webgl, bitmaprenderer,)
   var context = canvas.getContext('2d');
 
+// draw color is black upon arrival
   var current = {
     color: 'black'
   };
-// when you first arrive, your mouse is not clicked, so you are not drawing 
+// when you first arrive, you are not drawing instantly (must click to start):
   var drawing = false;
 
+// canvas html element gets event listeners for mouse moves
   canvas.addEventListener('mousedown', onMouseDown, false);
   canvas.addEventListener('mouseup', onMouseUp, false);
   canvas.addEventListener('mouseout', onMouseUp, false);
-  canvas.addEventListener('mousemove', throttle(onMouseMove, 10), false);
+  canvas.addEventListener('mousemove', throttle(onMouseMove, 6), false);
   
   //Touch for mobile devices
   canvas.addEventListener('touchstart', onMouseDown, false);
   canvas.addEventListener('touchend', onMouseUp, false);
   canvas.addEventListener('touchcancel', onMouseUp, false);
-  canvas.addEventListener('touchmove', throttle(onMouseMove, 10), false);
+  canvas.addEventListener('touchmove', throttle(onMouseMove, 6), false);
 
   // bring in all the colors in a classic js for loop, and update the color on click:
   for (let i = 0; i < colors.length; i++){
